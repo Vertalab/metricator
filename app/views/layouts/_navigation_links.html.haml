@@ -1,0 +1,3 @@
+-if current_user
+  %li{class: params[:controller] == 'integrations' ? 'active' : ''}
+    =link_to t('menu.integrations'), Integration

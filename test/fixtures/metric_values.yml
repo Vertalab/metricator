@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  metric_id: 1
+  measured_at: 2017-09-29 23:38:41
+  value: 1
+  delta: 1
+  delta_percent: 9.99
+
+two:
+  metric_id: 1
+  measured_at: 2017-09-29 23:38:41
+  value: 1
+  delta: 1
+  delta_percent: 9.99
