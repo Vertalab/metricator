@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    %ol.breadcrumb
+      %li=link_to t('integrations.all'), Integration
+      %li=link_to @integration.provider, [@integration, Metric]
+      %li.active=@metric.metric_source
+    %h1
+      =t("metrics.edit_metric")
+      =@metric.metric_source
+    =form_for [@integration, @metric], html: {class: 'form-horizontal2'} do |f|
+      .form-group
+        %label{for: 'metric_check_period_hours'}=t('metric.metric_period')
+        =f.select :check_period_hours, check_periods, {}, class: 'form-control'
+      .form-group
+        %label{for: 'metric_direction'}=t('metric.direction')
+        =f.select :direction, directions, {}, class: 'form-control'
+      =f.submit t("actions.save"), class: 'btn btn-default'

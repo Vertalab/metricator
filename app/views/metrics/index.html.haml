@@ -1,0 +1,46 @@
+%ol.breadcrumb
+  %li=link_to t('integrations.all'), Integration
+  %li.active=@integration.provider
+.pull-right
+  =link_to t("metrics.reload"), reload_integration_metrics_path(@integration), method: :post, class: 'btn btn-info'
+%h1=t("metrics.all")
+
+
+%table.table
+  %tr
+    %th
+      =t("metric.segment")
+    %th
+      =t("metric.current_value")
+    %th
+      =t("metric.change")
+    %th
+      =t("metric.direction")
+    %th
+      =t("metric.check_period")
+    %th
+      =t("metric.last_updated")
+    %th
+
+  -@metrics.each do |m|
+    %tr
+      %td
+        =link_to m.metric_source, [@integration, m]
+      %td
+        =m.recent_value.value
+      %td
+        =show_delta_percents(m)
+      %td
+        =m.direction
+      %td
+        Daily
+      %td
+        =I18n.l(m.recent_value.measured_at, format: :long)
+      %td
+        =link_to t('action.edit'), [:edit, @integration, m], class: 'btn btn-small btn-default'
+.row
+  .col-md-12
+    %h2 Recent 30 values
+  -@metrics.each do |m|
+    .col-md-6
+      =render "chart", metric: m

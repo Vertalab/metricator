@@ -1,0 +1,22 @@
+%div{id: "chart_#{metric.id}", style: "height: 500px; width: 100%;"}
+- vals = metric.metric_values.order('id DESC').limit(30).map{ |v| "[ '#{v.measured_at.to_date.to_s}', #{v.value} ]" }.join(',')
+:javascript
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart#{metric.id});
+
+  function drawChart#{metric.id}() {
+    var data = google.visualization.arrayToDataTable([
+    ['Date', 'Users'],
+     #{raw vals}
+    ]);
+
+   var options = {
+     title: '#{metric.metric_source}',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart_#{metric.id}'));
+
+    chart.draw(data, options);
+  }

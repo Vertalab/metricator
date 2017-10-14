@@ -1,0 +1,4 @@
+:dynamic: true
+:schedule:
+  CheckValuesJob:
+    every: '24h'

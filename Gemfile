@@ -43,7 +43,7 @@ gem "letter_opener", :group => :development
 gem 'omniauth'
 gem 'omniauth-intercom', '~> 0.1.9'
 gem 'intercom', '~> 3.5.10'
-
+gem 'sidekiq-scheduler', '2.1.10'
 gem 'i18n-tasks', '~> 0.9.18'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

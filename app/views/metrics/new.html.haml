@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    %ol.breadcrumb
+      %li=link_to t('integrations.all'), Integration
+      %li=link_to @integration.provider, @integration
+      %li.active=t('metrics.add')
+    %h1=t("metrics.add_new_metric")
+    =form_for [@integration, @metric], html: {class: 'form-horizontal2'} do |f|
+      .form-group
+        %label{for: 'metric_metric_source'}=t('metric.metric_source')
+        =f.hidden_field :metric_source_type
+        =f.select :metric_source, @segments, {}, class: 'form-control'
+      .form-group
+        %label{for: 'metric_check_period_hours'}=t('metric.metric_period')
+        =f.select :check_period_hours, check_periods, {}, class: 'form-control'
+      .checkbox
+        %label
+          =f.check_box :active
+          =t('metric.active')
+      =f.submit t("actions.create"), class: 'btn btn-default'
+

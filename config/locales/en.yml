@@ -1,33 +1,94 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  action:
+    edit: Edit
+    remove: Remove
+  actions:
+    create: Create
+    save: Save
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+    mailer:
+      confirmation_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+      reset_password_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        instruction_2: Instruction 2
+        instruction_3: Instruction 3
+      unlock_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        message: Message
+    passwords:
+      edit:
+        change_my_password: Change my password
+        change_your_password: Change your password
+        confirm_new_password: Confirm new password
+        new_password: New password
+      new:
+        forgot_your_password: Forgot your password
+        send_me_reset_password_instructions: Send me reset password instructions
+    registrations:
+      edit:
+        are_you_sure: Are you sure
+        back: Back
+        cancel_my_account: Cancel my account
+        leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want
+          to change it
+        title: Title
+        unhappy: Unhappy
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: We need your current
+          password to confirm your changes
+      new:
+        sign_up: Sign up
+    sessions:
+      new:
+        remember_me: Remember me
+        sign_in: Sign in
+    shared:
+      links:
+        didn_t_receive_confirmation_instructions: Didn t receive confirmation instructions
+        didn_t_receive_unlock_instructions: Didn t receive unlock instructions
+        forgot_your_password: Forgot your password
+        log_out: Log out
+        sign_in: Sign in
+        sign_in_with_provider: Sign in with provider
+        sign_up: Sign up
+    unlocks:
+      new:
+        resend_unlock_instructions: Resend unlock instructions
+  hello: Hello world
+  integration:
+    connected_at: Connected at
+    provider: Provider
+    source: Source
+    source_type: Source type
+  integrations:
+    add: Add new
+    all: My integrations
+    intercom: Intercom
+  menu:
+    integrations: Integrations
+  metric:
+    active: Active
+    current_value: Current value
+    direction: Direction
+    last_updated: Last updated
+    metric_period: Metric period
+    metric_source: Metric source
+    segment: Segment
+  metrics:
+    add: Add metric
+    add_new_metric: Add new metric
+    all: All metrics
+    edit_metric: Edit metric
+    reload: Re-init segments
+    segment: Segment

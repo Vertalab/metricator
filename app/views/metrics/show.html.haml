@@ -1,0 +1,10 @@
+.row
+  .col-md-12
+    %ol.breadcrumb
+      %li=link_to t('integrations.all'), Integration
+      %li=link_to @integration.provider, [@integration, Metric]
+      %li.active=@metric.metric_source
+    %h1
+      =@metric.metric_source
+  .col-md-12
+    =render "chart", metric: @metric
