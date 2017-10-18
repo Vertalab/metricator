@@ -6,5 +6,7 @@
       %li.active=@metric.metric_source
     %h1
       =@metric.metric_source
+      %sup
+        =show_delta_percents(@metric)
   .col-md-12
-    =render "chart", metric: @metric
+    =render "chart", metric: @metric, limit: 90

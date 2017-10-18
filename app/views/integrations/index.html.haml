@@ -15,7 +15,6 @@
     %th
       =t("integration.connected_at")
     %th
-    %th
 
   -@integrations.each do |i|
     %tr
@@ -23,8 +22,6 @@
         =link_to i.provider, [i, Metric]
       %td
         =I18n.l i.created_at, format: :long
-      %td
-        =i.token
       %td
         =link_to t('action.remove'), i, method: :delete, data: {confirm: "Sure?"}
 

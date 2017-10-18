@@ -30,7 +30,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
+gem 'capistrano-passenger'
 
+gem 'capistrano-rvm'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '>= 3.1'
 

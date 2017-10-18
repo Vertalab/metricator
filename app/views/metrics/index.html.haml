@@ -43,4 +43,4 @@
     %h2 Recent 30 values
   -@metrics.each do |m|
     .col-md-6
-      =render "chart", metric: m
+      =render "chart", metric: m, limit: 30
