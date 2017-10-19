@@ -41,6 +41,7 @@ gem "haml-rails", "~> 1.0"
 gem "letter_opener", :group => :development
 gem 'capistrano3-unicorn', :group => :development
 gem 'unicorn'
+gem 'listen'
 gem 'omniauth'
 gem 'omniauth-intercom', '~> 0.1.9'
 gem 'intercom', '~> 3.5.10'
