@@ -30,8 +30,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
-gem 'capistrano-passenger'
-
 gem 'capistrano-rvm'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '>= 3.1'
@@ -41,7 +39,8 @@ gem 'devise-bootstrap-views', '>= 0.0.11'
 gem "haml-rails", "~> 1.0"
 
 gem "letter_opener", :group => :development
-
+gem 'capistrano3-unicorn', :group => :development
+gem 'unicorn'
 gem 'omniauth'
 gem 'omniauth-intercom', '~> 0.1.9'
 gem 'intercom', '~> 3.5.10'
