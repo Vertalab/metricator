@@ -39,9 +39,7 @@ gem 'devise-bootstrap-views', '>= 0.0.11'
 gem "haml-rails", "~> 1.0"
 
 gem "letter_opener", :group => :development
-gem 'capistrano3-unicorn', :group => :development
-gem 'unicorn'
-gem 'listen'
+gem 'capistrano3-puma' , group: :development
 gem 'omniauth'
 gem 'omniauth-intercom', '~> 0.1.9'
 gem 'intercom', '~> 3.5.10'
