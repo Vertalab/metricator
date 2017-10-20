@@ -1,4 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :developer unless Rails.env.production?
-  provider :intercom, ENV['INTERCOM_KEY'], ENV['INTERCOM_SECRET']
+  provider :intercom, Rails.application.secrets.INTERCOM_KEY, Rails.application.secrets.INTERCOM_SECRET
 end
