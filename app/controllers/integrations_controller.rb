@@ -18,7 +18,7 @@ class IntegrationsController < ApplicationController
     @integration.save
 
 
-    @integration.init_metrics
+    @integration.update_values!
 
     redirect_to action: :index, notice: "Integration added"
   end

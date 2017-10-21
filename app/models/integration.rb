@@ -16,7 +16,6 @@ class Integration < ApplicationRecord
         metric.active = true
       end
     end
-    update_values!
   end
 
   def update_values!
