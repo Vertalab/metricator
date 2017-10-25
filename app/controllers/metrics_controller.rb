@@ -1,7 +1,7 @@
 class MetricsController < ApplicationController
   before_action :load_integration
   def reload
-    @integration.init_metrics
+    @integration.update_values!
     redirect_to [@integration, Metric], notice: "Segments reloaded"
   end
 
