@@ -17,8 +17,6 @@
     %th
       =t("metric.direction")
     %th
-      =t("metric.check_period")
-    %th
       =t("metric.last_updated")
     %th
 
@@ -32,8 +30,6 @@
         =show_delta_percents(m)
       %td
         =m.direction
-      %td
-        Daily
       %td
         =I18n.l(m.recent_value.measured_at, format: :long)
       %td
