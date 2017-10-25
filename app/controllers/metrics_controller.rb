@@ -26,7 +26,7 @@ class MetricsController < ApplicationController
   private
 
   def load_integration
-    @integration = current_user.integrations.find params[:integration_id]
+    @integration = Integration.find params[:integration_id]
   end
 
   def metric_params

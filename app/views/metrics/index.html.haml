@@ -1,8 +1,9 @@
-%ol.breadcrumb
-  %li=link_to t('integrations.all'), Integration
-  %li.active=@integration.provider
-.pull-right
-  =link_to t("metrics.reload"), reload_integration_metrics_path(@integration), method: :post, class: 'btn btn-info'
+- if current_user
+  %ol.breadcrumb
+    %li=link_to t('integrations.all'), Integration
+    %li.active=@integration.provider
+  .pull-right
+    =link_to t("metrics.reload"), reload_integration_metrics_path(@integration), method: :post, class: 'btn btn-info'
 %h1=t("metrics.all")
 
 
@@ -32,8 +33,9 @@
         =m.direction
       %td
         =I18n.l(m.recent_value.measured_at, format: :long)
-      %td
-        =link_to t('action.edit'), [:edit, @integration, m], class: 'btn btn-small btn-default'
+      - if current_user
+        %td
+          =link_to t('action.edit'), [:edit, @integration, m], class: 'btn btn-small btn-default'
 .row
   .col-md-12
     %h2 Recent 30 values
