@@ -23,6 +23,13 @@ class MetricsController < ApplicationController
     redirect_to [@integration, Metric], notice: "Metric updated"
   end
 
+  def destroy
+    return unless current_user
+    @metric = @integration.metrics.find params[:id]
+    @metric.destroy
+    redirect_to [@integration, Metric], notice: "Segment deleted"
+  end
+
   private
 
   def load_integration

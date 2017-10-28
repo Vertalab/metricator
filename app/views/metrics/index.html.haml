@@ -36,6 +36,7 @@
       - if current_user
         %td
           =link_to t('action.edit'), [:edit, @integration, m], class: 'btn btn-small btn-default'
+          =link_to t('action.delete'), [@integration, m], class: 'btn btn-small btn-warning', method: :delete, data: {confirm: 'Sure?'}
 .row
   .col-md-12
     %h2 Recent 30 values

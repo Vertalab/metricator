@@ -31,7 +31,11 @@ class Integration < ApplicationRecord
       value = metric.metric_values.new
       value.value = count
       value.delta = value.value - (last_value&.value || 0)
-      value.delta_percent = last_value && last_value&.value != 0 ? ((value.delta.abs.to_f / last_value&.value) * 100) : 500
+      if value.delta == 0 && value&.value == 0
+        value.delta_percent = 0
+      else
+        value.delta_percent = last_value && last_value&.value != 0 ? ((value.delta.abs.to_f / last_value&.value) * 100) : 500
+      end
       value.measured_at = Time.now
       value.save
     end
