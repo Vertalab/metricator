@@ -16,8 +16,6 @@
     %th
       =t("metric.change")
     %th
-      =t("metric.direction")
-    %th
       =t("metric.last_updated")
     %th
 
@@ -30,13 +28,12 @@
       %td
         =show_delta_percents(m)
       %td
-        =m.direction
-      %td
-        =I18n.l(m.recent_value.measured_at, format: :long)
+        =I18n.l(m.recent_value.measured_at, format: :short)
       - if current_user
         %td
           =link_to t('action.edit'), [:edit, @integration, m], class: 'btn btn-small btn-default'
-          =link_to t('action.delete'), [@integration, m], class: 'btn btn-small btn-warning', method: :delete, data: {confirm: 'Sure?'}
+          - if m.recent_value.created_at < 2.day.ago
+            =link_to t('action.delete'), [@integration, m], class: 'btn btn-small btn-warning', method: :delete, data: {confirm: 'Sure?'}
 .row
   .col-md-12
     %h2 Recent 30 values
