@@ -8,6 +8,17 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'https://www.gstatic.com/charts/loader.js'
     = csrf_meta_tags
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    :erb
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33457928-14"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-33457928-14');
+      </script>
+
   %body
     %header
       = render 'layouts/navigation'
